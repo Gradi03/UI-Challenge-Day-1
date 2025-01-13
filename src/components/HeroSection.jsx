@@ -11,7 +11,7 @@ const FeaturesSection = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: isInView ? 1 : 0 }}
       transition={{ duration: 1 }}
-      className="min-h-screen bg-gradient-to-br from-indigo-50 via-blue-100 to-yellow-50 text-gray-800 py-16 px-6 relative overflow-hidden"
+      className="min-h-screen bg-gradient-to-br from-indigo-50 via-blue-100 to-yellow-50 text-gray-800 py-16 px-6 relative overflow-hidden border-b border-gray-200"
     >
       {/* Decorative Background Elements */}
       <DecorativeCircles />
@@ -57,7 +57,7 @@ const FeaturesSection = () => {
             for more projects and personalized solutions!
           </p>
           <a
-            href="/contact"
+            href="https://ninjadesign.carrd.co/"
             className="px-6 py-3 bg-indigo-600 text-white rounded-lg shadow-md hover:bg-indigo-700 transition duration-300"
           >
             Get a Free Consultation
@@ -160,10 +160,43 @@ const FeatureCard = ({ title, description, index }) => {
         ease: 'easeInOut',
         delay: index * 0.2, // Stagger animations
       }}
-      className="relative bg-white p-8 rounded-xl shadow-xl overflow-hidden transform cursor-pointer group"
+      className="relative bg-white p-8 rounded-xl shadow-xl overflow-hidden transform cursor-pointer group hover:bg-gray-100"
     >
-      <h3 className="text-xl font-bold text-indigo-800">{title}</h3>
-      <p className="text-gray-600">{description}</p>
+      {/* Decorative Elements */}
+      <div className="absolute top-0 right-0 w-20 h-20 bg-blue-400 opacity-10 group-hover:opacity-20 transition duration-500"></div>
+      <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-r from-indigo-400 to-purple-400 opacity-20 rounded-full blur-2xl group-hover:opacity-30 transition duration-500"></div>
+
+      <div className="flex items-center mb-6">
+        <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-red-400 text-white flex justify-center items-center rounded-full">
+          <motion.svg
+            whileHover={{ rotate: 360 }}
+            transition={{ duration: 0.8 }}
+            className="w-8 h-8"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <motion.path
+              initial={{ pathLength: 0 }}
+              animate={{ pathLength: 1 }}
+              transition={{ duration: 2, ease: 'easeInOut' }}
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
+            />
+          </motion.svg>
+        </div>
+        <h3 className="ml-4 text-xl font-bold text-indigo-800">{title}</h3>
+      </div>
+
+      <motion.p
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+        className="text-gray-600 group-hover:text-gray-800 transition duration-500"
+      >
+        {description}
+      </motion.p>
     </motion.div>
   );
 };
