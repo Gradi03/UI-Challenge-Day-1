@@ -162,10 +162,6 @@ const FeatureCard = ({ title, description, index }) => {
       }}
       className="relative bg-white p-8 rounded-xl shadow-xl overflow-hidden transform cursor-pointer group hover:bg-gray-100"
     >
-      {/* Decorative Elements */}
-      <div className="absolute top-0 right-0 w-20 h-20 bg-blue-400 opacity-10 group-hover:opacity-20 transition duration-500"></div>
-      <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-r from-indigo-400 to-purple-400 opacity-20 rounded-full blur-2xl group-hover:opacity-30 transition duration-500"></div>
-
       <div className="flex items-center mb-6">
         <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-red-400 text-white flex justify-center items-center rounded-full">
           <motion.svg
