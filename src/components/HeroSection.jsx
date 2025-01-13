@@ -11,7 +11,7 @@ const FeaturesSection = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: isInView ? 1 : 0 }}
       transition={{ duration: 1 }}
-      className="min-h-screen bg-gradient-to-br from-indigo-50 via-blue-100 to-yellow-50 text-gray-800 py-16 px-6 relative overflow-hidden border-b border-gray-200"
+      className="min-h-screen bg-gradient-to-br from-indigo-50 via-blue-100 to-yellow-50 text-gray-800 py-16 px-4 sm:px-6 lg:px-12 relative overflow-hidden border-b border-gray-200"
     >
       {/* Decorative Background Elements */}
       <DecorativeCircles />
@@ -19,11 +19,11 @@ const FeaturesSection = () => {
       {/* Content Wrapper */}
       <div className="max-w-7xl mx-auto text-center relative z-10">
         <AnimatedTitle />
-        <p className="text-lg leading-relaxed text-gray-600 mb-16">
+        <p className="text-base sm:text-lg leading-relaxed text-gray-600 mb-8 sm:mb-12 lg:mb-16">
           Unlock innovation and creativity with features designed to captivate and inspire.
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12 lg:gap-16">
           {features.map((feature, index) => (
             <FeatureCard
               key={index}
@@ -39,12 +39,12 @@ const FeaturesSection = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, ease: 'easeOut', delay: 0.5 }}
-          className="mt-12"
+          className="mt-8 sm:mt-12 lg:mt-16"
         >
-          <p className="text-xl font-semibold text-gray-700">
+          <p className="text-lg sm:text-xl font-semibold text-gray-700">
             Ready to transform your online presence?
           </p>
-          <p className="text-lg text-gray-600 mb-4">
+          <p className="text-sm sm:text-base text-gray-600 mb-4">
             DM me on Instagram at{' '}
             <a
               href="https://instagram.com/ninja_design_pro"
@@ -58,7 +58,7 @@ const FeaturesSection = () => {
           </p>
           <a
             href="https://ninjadesign.carrd.co/"
-            className="px-6 py-3 bg-indigo-600 text-white rounded-lg shadow-md hover:bg-indigo-700 transition duration-300"
+            className="px-6 py-3 bg-indigo-600 text-white rounded-lg shadow-md hover:bg-indigo-700 transition duration-300 text-sm sm:text-base"
           >
             Get a Free Consultation
           </a>
@@ -71,7 +71,7 @@ const FeaturesSection = () => {
 const DecorativeCircles = () => (
   <>
     <motion.div
-      className="absolute top-0 left-0 w-52 h-52 bg-indigo-500 bg-opacity-20 rounded-full mix-blend-multiply filter blur-3xl"
+      className="absolute top-0 left-0 w-32 sm:w-40 lg:w-52 h-32 sm:h-40 lg:h-52 bg-indigo-500 bg-opacity-20 rounded-full mix-blend-multiply filter blur-3xl"
       animate={{
         scale: [1, 1.1, 1],
         opacity: [0.2, 0.3, 0.2],
@@ -83,7 +83,7 @@ const DecorativeCircles = () => (
       }}
     ></motion.div>
     <motion.div
-      className="absolute top-20 right-0 w-40 h-40 bg-yellow-400 bg-opacity-30 rounded-full mix-blend-multiply filter blur-2xl"
+      className="absolute top-20 right-0 w-28 sm:w-36 lg:w-40 h-28 sm:h-36 lg:h-40 bg-yellow-400 bg-opacity-30 rounded-full mix-blend-multiply filter blur-2xl"
       animate={{
         scale: [1, 1.2, 1],
         opacity: [0.3, 0.5, 0.3],
@@ -94,7 +94,7 @@ const DecorativeCircles = () => (
         repeatType: 'reverse',
       }}
     ></motion.div>
-    <div className="absolute bottom-0 left-16 w-60 h-60 bg-blue-300 bg-opacity-25 rounded-full mix-blend-multiply filter blur-3xl animate-pulse"></div>
+    <div className="absolute bottom-0 left-8 sm:left-16 w-40 sm:w-52 lg:w-60 h-40 sm:h-52 lg:h-60 bg-blue-300 bg-opacity-25 rounded-full mix-blend-multiply filter blur-3xl animate-pulse"></div>
   </>
 );
 
@@ -103,7 +103,7 @@ const AnimatedTitle = () => (
     initial={{ opacity: 0, y: -50, scale: 0.8 }}
     animate={{ opacity: 1, y: 0, scale: 1 }}
     transition={{ duration: 1.2, ease: 'easeOut' }}
-    className="text-6xl font-extrabold mb-6 text-indigo-800 tracking-wide"
+    className="text-3xl sm:text-4xl lg:text-6xl font-extrabold mb-6 text-indigo-800 tracking-wide"
   >
     <motion.span
       initial={{ rotate: -10, scale: 0.9 }}
@@ -160,14 +160,14 @@ const FeatureCard = ({ title, description, index }) => {
         ease: 'easeInOut',
         delay: index * 0.2, // Stagger animations
       }}
-      className="relative bg-white p-8 rounded-xl shadow-xl overflow-hidden transform cursor-pointer group hover:bg-gray-100"
+      className="relative bg-white p-6 sm:p-8 rounded-xl shadow-xl overflow-hidden transform cursor-pointer group hover:bg-gray-100"
     >
-      <div className="flex items-center mb-6">
-        <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-red-400 text-white flex justify-center items-center rounded-full">
+      <div className="flex items-center mb-4 sm:mb-6">
+        <div className="w-12 sm:w-14 h-12 sm:h-14 bg-gradient-to-br from-yellow-400 to-red-400 text-white flex justify-center items-center rounded-full">
           <motion.svg
             whileHover={{ rotate: 360 }}
             transition={{ duration: 0.8 }}
-            className="w-8 h-8"
+            className="w-6 sm:w-8"
             viewBox="0 0 24 24"
             aria-hidden="true"
           >
@@ -182,14 +182,14 @@ const FeatureCard = ({ title, description, index }) => {
             />
           </motion.svg>
         </div>
-        <h3 className="ml-4 text-xl font-bold text-indigo-800">{title}</h3>
+        <h3 className="ml-4 text-lg sm:text-xl font-bold text-indigo-800">{title}</h3>
       </div>
 
       <motion.p
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
-        className="text-gray-600 group-hover:text-gray-800 transition duration-500"
+        className="text-sm sm:text-base text-gray-600 group-hover:text-gray-800 transition duration-500"
       >
         {description}
       </motion.p>
